@@ -19,13 +19,13 @@ This guide will help you connect the registration form to a Google Sheet so all 
 3. Open the file `google-apps-script.js` from this project
 4. Copy ALL the code from that file
 5. Paste it into the Apps Script editor
-6. Click the **Save** icon (💾) or press `Ctrl+S` / `Cmd+S`
+6. Click the **Save** icon or press `Ctrl+S` / `Cmd+S`
 7. Name your project: "Vegan Retreat Form Handler"
 
 ### 3. Deploy the Web App
 
 1. Click **Deploy** > **New deployment**
-2. Click the gear icon (⚙️) next to "Select type"
+2. Click the gear icon next to "Select type"
 3. Choose **Web app**
 4. Configure the deployment:
    - **Description**: "Vegan Retreat Registration Handler"
@@ -36,14 +36,14 @@ This guide will help you connect the registration form to a Google Sheet so all 
    - Click **Authorize access**
    - Choose your Google account
    - Click **Advanced** (if you see a warning)
-   - Click **Go to [Project Name] (unsafe)** 
+   - Click **Go to [Project Name] (unsafe)**
    - Click **Allow**
 7. Copy the **Web App URL** that appears (it looks like: `https://script.google.com/macros/s/...`)
 
 ### 4. Update Your Next.js Project
 
 1. Open the file: `app/register/page.tsx`
-2. Find this line (around line 52):
+2. Find this line (around line 47):
    ```typescript
    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'
    ```
@@ -74,18 +74,13 @@ Each registration will create a new row with these columns:
 - Pet Details
 - Expectations
 - Activities to Lead
-- Community Connections
-- Referral
-- Dietary/Medical Info
-- Accessibility Requirements
-- Agreement Checkboxes (5 columns)
-- Stay Connected
+- Agree to Guidelines
 
 ## Optional: Email Confirmations
 
 The script includes commented-out code to send confirmation emails. To enable:
 
-1. In the Apps Script editor, find the commented section (lines 84-102)
+1. In the Apps Script editor, find the commented section (lines 76-98)
 2. Remove the `/*` and `*/` to uncomment
 3. Customize the email template if desired
 4. Save and redeploy
@@ -125,7 +120,11 @@ If you need to modify what data is collected:
 
 1. Update the form in `app/register/page.tsx`
 2. Update the Apps Script to match the new fields
-3. Redeploy the Apps Script (same steps as before)
+3. **Important**: Create a new deployment version:
+   - Click **Deploy** > **Manage deployments**
+   - Click the pencil icon to edit
+   - Change "Version" to **New version**
+   - Click **Deploy**
 4. The sheet will automatically add new columns
 
 ## Support

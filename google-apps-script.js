@@ -1,8 +1,8 @@
 /**
  * Google Apps Script for Vegan Retreat Registration Form
- * 
+ *
  * SETUP INSTRUCTIONS:
- * 
+ *
  * 1. Create a new Google Sheet for storing registrations
  * 2. Go to Extensions > Apps Script
  * 3. Delete any existing code and paste this entire script
@@ -23,10 +23,10 @@ function doPost(e) {
   try {
     // Get the active spreadsheet
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    
+
     // Parse the incoming data
     const data = JSON.parse(e.postData.contents);
-    
+
     // Check if header row exists, if not create it
     if (sheet.getLastRow() === 0) {
       const headers = [
@@ -40,26 +40,17 @@ function doPost(e) {
         'Pet Details',
         'Expectations',
         'Activities to Lead',
-        'Community Connections',
-        'Referral',
-        'Dietary/Medical Info',
-        'Accessibility Requirements',
-        'Agree: Vegan Throughout',
-        'Agree: Self-Organized',
-        'Agree: Guidelines',
-        'Agree: Refund Policy',
-        'Agree: Decisions Final',
-        'Stay Connected'
+        'Agree to Guidelines'
       ];
       sheet.appendRow(headers);
-      
+
       // Format header row
       const headerRange = sheet.getRange(1, 1, 1, headers.length);
       headerRange.setFontWeight('bold');
       headerRange.setBackground('#000000');
       headerRange.setFontColor('#ffffff');
     }
-    
+
     // Prepare the row data
     const rowData = [
       data.timestamp || new Date().toISOString(),
@@ -72,24 +63,15 @@ function doPost(e) {
       data.petDetails || '',
       data.expectations || '',
       data.activities || '',
-      data.communityConnections || '',
-      data.referral || '',
-      data.dietaryInfo || '',
-      data.accessibilityRequirements || '',
-      data.agreeVegan ? 'Yes' : 'No',
-      data.agreeSelfOrganized ? 'Yes' : 'No',
-      data.agreeGuidelines ? 'Yes' : 'No',
-      data.agreeRefundPolicy ? 'Yes' : 'No',
-      data.agreeDecisions ? 'Yes' : 'No',
-      data.stayConnected ? 'Yes' : 'No'
+      data.agreeToGuidelines ? 'Yes' : 'No'
     ];
-    
+
     // Append the data to the sheet
     sheet.appendRow(rowData);
-    
+
     // Auto-resize columns for better readability
     sheet.autoResizeColumns(1, rowData.length);
-    
+
     // Send confirmation email (optional - uncomment if you want to use this)
     /*
     if (data.email) {
@@ -101,7 +83,6 @@ function doPost(e) {
 Thank you for registering for the Vegan Retreat 2026!
 
 We've received your registration and will be in touch soon with more details about:
-- Venue location
 - Payment information
 - What to bring
 - Schedule
@@ -115,12 +96,12 @@ Indic Pilgrim & The Curious Monk`
       });
     }
     */
-    
+
     // Return success response
     return ContentService
       .createTextOutput(JSON.stringify({ 'result': 'success', 'row': sheet.getLastRow() }))
       .setMimeType(ContentService.MimeType.JSON);
-      
+
   } catch (error) {
     // Log error and return error response
     Logger.log('Error: ' + error.toString());
@@ -145,20 +126,11 @@ function testScript() {
         petDetails: '',
         expectations: 'Looking forward to connecting with fellow vegans',
         activities: 'Would love to lead a meditation session',
-        communityConnections: 'Bangalore Vegans WhatsApp group',
-        referral: '',
-        dietaryInfo: 'No allergies',
-        accessibilityRequirements: '',
-        agreeVegan: true,
-        agreeSelfOrganized: true,
-        agreeGuidelines: true,
-        agreeRefundPolicy: true,
-        agreeDecisions: true,
-        stayConnected: true
+        agreeToGuidelines: true
       })
     }
   };
-  
+
   const result = doPost(testData);
   Logger.log(result.getContent());
 }
