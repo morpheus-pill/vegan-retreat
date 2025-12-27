@@ -23,6 +23,10 @@ export default function Home() {
 }
 
 function Hero() {
+  const shareText = "Join me at the Vegan Retreat 2026! A gathering for vegans to connect, reflect, and celebrate. January 1-4, 2026 at The Lilac Farm near Bangalore."
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://veganretreat2026.com'
+  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`
+
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center px-6 py-20">
       <div
@@ -52,7 +56,7 @@ function Hero() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <span>Near Bangalore</span>
+            <span>The Lilac Farm, Near Bangalore</span>
           </div>
         </div>
         <div className="pt-4">
@@ -61,6 +65,30 @@ function Hero() {
             className="inline-block px-8 py-4 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-200 font-medium"
           >
             Register Your Interest
+          </a>
+        </div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+          <a
+            href="https://instagram.com/indicpilgrim"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors text-sm"
+          >
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            DM on Instagram
+          </a>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2 bg-green-500/80 backdrop-blur-sm rounded-full hover:bg-green-500 transition-colors text-sm"
+          >
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Share on WhatsApp
           </a>
         </div>
       </div>
@@ -183,30 +211,21 @@ function LogisticsSection() {
 
         <div>
           <h3 className="text-xl font-bold mb-2">📍 Location</h3>
-          <p>Within a 2-hour radius of Bangalore. The exact venue will be shared soon.</p>
+          <p><strong>The Lilac Farm</strong> — a 13-acre vegan farmstay near Somashettihalli, about 2 hours from Bangalore. Run by a mother-daughter duo, this zero-waste farm offers rustic charm with recycled-material cottages, farm-to-table dining, and activities like hiking and stargazing. The venue is pet-friendly.</p>
+          <a href="https://www.thelilacfarm.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.thelilacfarm.com</a>
         </div>
 
         <div>
           <h3 className="text-xl font-bold mb-2">💰 Charges</h3>
-          <p><strong>Approx. ₹10,000 - ₹15,000 per person</strong></p>
-          <p>Covers accommodation, all vegan meals, and group activities.</p>
-          <p className="text-sm text-gray-500 mt-2">
-            This is non-commercial. Any surplus goes to animal sanctuaries and vegan activists.
+          <p>This is a paid retreat with minimal charges covering accommodation and vegan meals.</p>
+          <p className="mt-2">
+            Any sum leftover after everyone's contribution will go to animal sanctuaries and vegan activists. We can all use this event as an opportunity to raise funds and support the work of those fighting for animal rights.
           </p>
         </div>
 
         <div>
           <h3 className="text-xl font-bold mb-2">👥 Group Size</h3>
-          <p>Limited to approximately <strong>30 participants</strong> (including children). May expand to ~50 with a larger venue.</p>
-        </div>
-
-        <div>
-          <h3 className="text-xl font-bold mb-2">Cancellation Policy</h3>
-          <ul className="list-disc list-inside space-y-1">
-            <li><strong>100% refund</strong> if cancelled by December 24</li>
-            <li><strong>75% refund</strong> if cancelled by December 27</li>
-            <li><strong>50% refund</strong> if cancelled after December 27</li>
-          </ul>
+          <p>Limited to approximately <strong>30 participants</strong> (including children). May expand to ~50 based on interest.</p>
         </div>
       </div>
     </section>
@@ -231,25 +250,41 @@ function QuotesSection() {
     return () => clearInterval(timer)
   }, [quotes.length])
 
+  const prevQuote = () => {
+    setCurrentQuote((prev) => (prev - 1 + quotes.length) % quotes.length)
+  }
+
+  const nextQuote = () => {
+    setCurrentQuote((prev) => (prev + 1) % quotes.length)
+  }
+
   return (
     <section className="mb-12 py-8 border-y border-gray-200">
-      <div className="text-center">
-        <blockquote className="text-xl md:text-2xl font-medium mb-4 transition-opacity duration-500">
-          "{quotes[currentQuote].text}"
-        </blockquote>
-        <cite className="text-gray-600 not-italic">— {quotes[currentQuote].author}</cite>
-      </div>
-      <div className="flex justify-center gap-2 mt-6">
-        {quotes.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrentQuote(i)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              i === currentQuote ? 'bg-gray-900 w-6' : 'bg-gray-300'
-            }`}
-            aria-label={`Go to quote ${i + 1}`}
-          />
-        ))}
+      <div className="flex items-center justify-center gap-6">
+        <button
+          onClick={prevQuote}
+          className="text-gray-400 hover:text-gray-600 transition-colors p-2"
+          aria-label="Previous quote"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <div className="text-center flex-1 max-w-xl">
+          <blockquote className="text-xl md:text-2xl font-medium mb-4 transition-opacity duration-500">
+            "{quotes[currentQuote].text}"
+          </blockquote>
+          <cite className="text-gray-600 not-italic">— {quotes[currentQuote].author}</cite>
+        </div>
+        <button
+          onClick={nextQuote}
+          className="text-gray-400 hover:text-gray-600 transition-colors p-2"
+          aria-label="Next quote"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
     </section>
   )
@@ -260,11 +295,11 @@ function FAQSection() {
     { question: "Who can attend?", answer: "Anyone who wants to be vegan or is already vegan. This is a perfect opportunity to celebrate Veganuary!" },
     { question: "I'm not fully vegan yet. Can I still come?", answer: "Yes! We welcome anyone committed to being vegan throughout the retreat." },
     { question: "Can I bring my family?", answer: "Yes! Children under 12 are exempted from the strict vegan requirement." },
-    { question: "What about pets?", answer: "You can bring vaccinated animals. Just inform us in advance." },
-    { question: "Is the venue wheelchair accessible?", answer: "Accessibility info will be shared once the venue is finalized. Mention special requirements in your registration." },
-    { question: "How are costs calculated?", answer: "This is non-commercial. Costs cover accommodation, meals, and activities. Surplus goes to animal causes." },
+    { question: "What about pets?", answer: "The Lilac Farm is pet-friendly! You can bring vaccinated animals. Just inform us in advance." },
+    { question: "Is the venue wheelchair accessible?", answer: "The Lilac Farm is a rustic farmstay. Please mention any special accessibility requirements in your registration and we'll do our best to accommodate." },
+    { question: "How are costs calculated?", answer: "This is non-commercial. Costs cover accommodation, meals, and activities. Any surplus goes to animal sanctuaries and vegan activists." },
     { question: "What if someone violates guidelines?", answer: "Organizers will discuss with participants and make a final, binding decision." },
-    { question: "How can I help spread the word?", answer: "Share this page with fellow vegans and in vegan groups!" }
+    { question: "How can I help spread the word?", answer: "Share this page with fellow vegans and in vegan groups! Use the WhatsApp share button to spread the word." }
   ]
 
   return (
@@ -315,6 +350,10 @@ function OrganizersSection() {
 }
 
 function CTASection() {
+  const shareText = "Join me at the Vegan Retreat 2026! A gathering for vegans to connect, reflect, and celebrate. January 1-4, 2026 at The Lilac Farm near Bangalore."
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://veganretreat2026.com'
+  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`
+
   return (
     <section className="py-16 px-6 bg-black text-white">
       <div className="max-w-2xl mx-auto text-center space-y-6">
@@ -331,12 +370,27 @@ function CTASection() {
             Register Your Interest
           </a>
           <a
-            href="https://instagram.com/indic.pilgrim"
+            href="https://instagram.com/indicpilgrim"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 border-2 border-white rounded-full hover:bg-white hover:text-black transition-all duration-200 font-medium"
           >
             Contact on Instagram
+          </a>
+        </div>
+
+        <div className="pt-6 border-t border-gray-700 mt-8">
+          <p className="text-gray-400 mb-4">Know someone who'd love this?</p>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors font-medium"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Share on WhatsApp
           </a>
         </div>
       </div>
@@ -354,12 +408,12 @@ function Footer() {
         <p>
           Questions? DM{' '}
           <a
-            href="https://instagram.com/indic.pilgrim"
+            href="https://instagram.com/indicpilgrim"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:underline"
           >
-            @indic.pilgrim
+            @indicpilgrim
           </a>
           {' '}on Instagram
         </p>

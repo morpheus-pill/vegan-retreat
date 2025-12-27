@@ -119,4 +119,4 @@ Private project for Vegan Retreat 2026
 
 ## Contact
 
-For questions about the retreat, DM [@indic.pilgrim](https://instagram.com/indic.pilgrim) on Instagram
+For questions about the retreat, DM [@indicpilgrim](https://instagram.com/indicpilgrim) on Instagram

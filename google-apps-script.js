@@ -106,7 +106,7 @@ We've received your registration and will be in touch soon with more details abo
 - What to bring
 - Schedule
 
-In the meantime, if you have any questions, feel free to reach out to us on Instagram @indic.pilgrim
+In the meantime, if you have any questions, feel free to reach out to us on Instagram @indicpilgrim
 
 Looking forward to connecting with you!
 
