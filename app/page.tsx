@@ -25,10 +25,7 @@ export default function Home() {
 function Hero() {
   const shareText =
     "Join me at the Vegan Retreat 2026! A gathering for vegans to connect, reflect, and celebrate. January 1-4, 2026 at The Lilac Farm near Bangalore.";
-  const shareUrl =
-    typeof window !== "undefined"
-      ? window.location.href
-      : "https://veganretreat2026.com";
+  const shareUrl = "https://vegan-retreat.netlify.app";
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(
     shareText + " " + shareUrl
   )}`;
@@ -135,8 +132,8 @@ function WhySection() {
       </h2>
       <div className="space-y-4 text-gray-700 leading-relaxed">
         <p>
-          Being vegan is more than a diet - it's a way of life. But it often comes
-          with its own set of challenges: constantly checking ingredients,
+          Being vegan is more than a diet - it's a way of life. But it often
+          comes with its own set of challenges: constantly checking ingredients,
           explaining your choices, and sometimes feeling like the odd one out.
         </p>
         <p>
@@ -584,10 +581,7 @@ function OrganizersSection() {
 function CTASection() {
   const shareText =
     "Join me at the Vegan Retreat 2026! A gathering for vegans to connect, reflect, and celebrate. January 1-4, 2026 at The Lilac Farm near Bangalore.";
-  const shareUrl =
-    typeof window !== "undefined"
-      ? window.location.href
-      : "https://veganretreat2026.com";
+  const shareUrl = "https://vegan-retreat.netlify.app";
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(
     shareText + " " + shareUrl
   )}`;
@@ -658,6 +652,13 @@ function Footer() {
           </a>{" "}
           on Instagram
         </p>
+        <div className="flex items-center justify-center">
+          <img
+            src="https://hitscounter.dev/api/hit?url=https://vegan-retreat.netlify.app&label=visitors&icon=eye&color=6b7280"
+            alt="Visitor Count"
+            className="h-5 opacity-80"
+          />
+        </div>
         <p className="italic text-xs pt-2 border-t border-gray-800">
           "The greatness of a nation can be judged by the way its animals are
           treated." - Gandhi
