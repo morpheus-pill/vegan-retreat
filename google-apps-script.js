@@ -30,40 +30,40 @@ function doPost(e) {
     // Check if header row exists, if not create it
     if (sheet.getLastRow() === 0) {
       const headers = [
-        'Timestamp',
-        'Name',
-        'Email',
-        'Mobile',
-        'Vegan Status',
-        'Number of People',
-        'Has Pets',
-        'Pet Details',
-        'Expectations',
-        'Activities to Lead',
-        'Agree to Guidelines'
+        "Timestamp",
+        "Name",
+        "Email",
+        "Mobile",
+        "Vegan Status",
+        "Number of People",
+        "Has Pets",
+        "Pet Details",
+        "Expectations",
+        "Activities to Lead",
+        "Agree to Guidelines",
       ];
       sheet.appendRow(headers);
 
       // Format header row
       const headerRange = sheet.getRange(1, 1, 1, headers.length);
-      headerRange.setFontWeight('bold');
-      headerRange.setBackground('#000000');
-      headerRange.setFontColor('#ffffff');
+      headerRange.setFontWeight("bold");
+      headerRange.setBackground("#000000");
+      headerRange.setFontColor("#ffffff");
     }
 
     // Prepare the row data
     const rowData = [
       data.timestamp || new Date().toISOString(),
-      data.name || '',
-      data.email || '',
-      data.mobile || '',
-      data.veganStatus || '',
-      data.numberOfPeople || '',
-      data.hasPets || '',
-      data.petDetails || '',
-      data.expectations || '',
-      data.activities || '',
-      data.agreeToGuidelines ? 'Yes' : 'No'
+      data.name || "",
+      data.email || "",
+      data.mobile || "",
+      data.veganStatus || "",
+      data.numberOfPeople || "",
+      data.hasPets || "",
+      data.petDetails || "",
+      data.expectations || "",
+      data.activities || "",
+      data.agreeToGuidelines ? "Yes" : "No",
     ];
 
     // Append the data to the sheet
@@ -73,41 +73,36 @@ function doPost(e) {
     sheet.autoResizeColumns(1, rowData.length);
 
     // Send confirmation email (optional - uncomment if you want to use this)
-    /*
+
     if (data.email) {
       MailApp.sendEmail({
         to: data.email,
-        subject: 'Vegan Retreat 2026 - Registration Confirmed',
+        subject: "Vegan Retreat 2026 - Form Received",
         body: `Dear ${data.name},
 
-Thank you for registering for the Vegan Retreat 2026!
+Thank you for expressing interest in joining for the Vegan Retreat!
 
-We've received your registration and will be in touch soon with more details about:
-- Payment information
-- What to bring
-- Schedule
+We've received your registration and will be in touch soon.
 
 In the meantime, if you have any questions, feel free to reach out to us on Instagram @indicpilgrim
 
 Looking forward to connecting with you!
 
 Warm regards,
-Indic Pilgrim & The Curious Monk`
+Team Vegan Retreat`,
       });
     }
-    */
 
     // Return success response
-    return ContentService
-      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': sheet.getLastRow() }))
-      .setMimeType(ContentService.MimeType.JSON);
-
+    return ContentService.createTextOutput(
+      JSON.stringify({ result: "success", row: sheet.getLastRow() })
+    ).setMimeType(ContentService.MimeType.JSON);
   } catch (error) {
     // Log error and return error response
-    Logger.log('Error: ' + error.toString());
-    return ContentService
-      .createTextOutput(JSON.stringify({ 'result': 'error', 'error': error.toString() }))
-      .setMimeType(ContentService.MimeType.JSON);
+    Logger.log("Error: " + error.toString());
+    return ContentService.createTextOutput(
+      JSON.stringify({ result: "error", error: error.toString() })
+    ).setMimeType(ContentService.MimeType.JSON);
   }
 }
 
@@ -117,18 +112,18 @@ function testScript() {
     postData: {
       contents: JSON.stringify({
         timestamp: new Date().toISOString(),
-        name: 'Test User',
-        email: 'test@example.com',
-        mobile: '+91 9876543210',
-        veganStatus: 'vegan',
-        numberOfPeople: '2',
-        hasPets: 'no',
-        petDetails: '',
-        expectations: 'Looking forward to connecting with fellow vegans',
-        activities: 'Would love to lead a meditation session',
-        agreeToGuidelines: true
-      })
-    }
+        name: "Test User",
+        email: "test@example.com",
+        mobile: "+91 9876543210",
+        veganStatus: "vegan",
+        numberOfPeople: "2",
+        hasPets: "no",
+        petDetails: "",
+        expectations: "Looking forward to connecting with fellow vegans",
+        activities: "Would love to lead a meditation session",
+        agreeToGuidelines: true,
+      }),
+    },
   };
 
   const result = doPost(testData);
